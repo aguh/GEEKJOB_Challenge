@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author guest1Day
  */
-public class 引数戻り値2 extends HttpServlet {
+public class test extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -26,7 +27,6 @@ public class 引数戻り値2 extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    // 髢ｾ�ｽｪ陝ｾ�ｽｱ驍擾ｽｹ闔我ｹ晢ｽ帝勗�ｽｨ驕会ｽｺ邵ｺ蜷ｶ�ｽ狗ｹ晢ｽ｡郢ｧ�ｽｽ郢晢ｿｽ郢晢ｿｽ
     String[] myprofile(String ID, PrintWriter pw) {
         String[] name = {"1001<br>","私の名前は大濱拓人です<br>", "1993年6月2日<br>", "東京都江戸川区<br>"};
         String[] n = {"1002<br>", "私の名前は羽田圭介です<br>", "1985年10月19日<br>", "null<br>"};
@@ -38,7 +38,6 @@ public class 引数戻り値2 extends HttpServlet {
         } else {
             return na;
         }
-        
 
     }
 
@@ -48,7 +47,8 @@ public class 引数戻り値2 extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String ID = "1001";
-            for (int o = 1; o <= 3; o++) {
+            Integer limit=2;
+            for (int o = 1; o <= limit; o++) {
                 
                 String[] j = myprofile(ID, out);
 
@@ -58,6 +58,8 @@ public class 引数戻り値2 extends HttpServlet {
                     }
                     out.print(j[k]);
                 }
+                
+                
                 
                 if (ID == "1001") {
                     ID = "1002";
