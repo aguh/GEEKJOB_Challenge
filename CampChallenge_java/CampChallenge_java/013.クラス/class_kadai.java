@@ -16,15 +16,20 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author guest1Day
  */
+class koClass extends class_kadai{
+    public void kuria(int i,int j){
+          this.i=i;
+          this.j=j;
+          
+      }
+    public void kuria2(String i, String j){
+        String total=i+j;
+    }
+}
 public class class_kadai extends HttpServlet {
       public int i=0;
       public int j=0;
-      public int getTax(int i){
-          return i;
-      }
-      public int getTAX(int j){
-          return j;
-      }
+
       public void kousin(int i,int j){
           this.i=i;
           this.j=j;
@@ -33,15 +38,11 @@ public class class_kadai extends HttpServlet {
           this.i=i;
           this.j=j;
       }
-      public void kuria(int i,int j){
-          this.i=i;
-          this.j=j;
-      }
+      
       public void prin( PrintWriter out){
           out.println("1番目の変数は"+(this.i=i)+"です");
           out.println("2番目の変数は"+(this.j=j)+"です");
       }
-      
       
       
     /**
@@ -59,9 +60,11 @@ public class class_kadai extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
     //繝｡繧ｽ繝�繝画峩譁ｰ,蜻ｼ縺ｳ縺�縺�
-    kousin(10,13);
-    gamen(10,13);
-    kuria(0,0);
+    kousin(0,0);
+    gamen(0,0);
+    koClass h =new koClass();
+    h.kuria(0,0);
+    h.kuria2(null,null);
     prin(out);
         }
     }
